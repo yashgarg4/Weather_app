@@ -194,24 +194,22 @@ h1 {
     display: none !important;
 }
 
-/* --- Responsive Adjustments --- */
 
-/* For tablets and smaller devices */
 @media (max-width: 768px) {
     .container {
-        padding: 30px 25px; /* Reduce padding */
-        margin: 20px; /* Add some margin so it doesn't touch screen edges */
-        max-width: 90%; /* Allow it to be wider relative to small screens */
+        padding: 30px 25px; 
+        margin: 20px 15px; 
+        max-width: 95%; 
     }
 
     h1 {
-        font-size: 2em; /* Adjust heading size */
+        font-size: 2em; 
         margin-bottom: 25px;
     }
 
     .input-section input[type="text"],
     #get-weather-btn {
-        font-size: 15px; /* Slightly smaller font for inputs/button */
+        font-size: 15px; 
         padding: 12px;
     }
 
@@ -231,8 +229,9 @@ h1 {
 /* For very small mobile devices */
 @media (max-width: 480px) {
     .container {
-        padding: 25px 15px; /* Further reduce padding */
-        border-radius: 10px; /* Slightly smaller border radius */
+        padding: 170px 15px; 
+        margin: 15px 10px; 
+        border-radius: 10px; 
     }
 
     h1 {
@@ -240,20 +239,20 @@ h1 {
     }
 
     .input-section {
-        flex-direction: column; /* Stack inputs and button vertically */
-        gap: 12px; /* Adjust gap for vertical layout */
+        flex-direction: column; 
+        gap: 12px; 
     }
 
     .input-section input[type="text"],
-    #countrycode-input, /* Ensure country code input also takes full width */
+    #countrycode-input, 
     #get-weather-btn {
-        width: 100%; /* Make inputs and button take full width */
-        max-width: 100%; /* Override any previous max-width for inputs */
+        width: 100%; 
+        max-width: 100%; 
     }
 
     #weather-details p,
     #weather-details p#description {
-        font-size: 16px; /* Adjust paragraph font size */
+        font-size: 16px; 
     }
 
     #weather-icon {
