@@ -35,7 +35,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 100%;
-    max-width: 500px; 
+    max-width: 520px; /* Slightly increased max-width for better laptop view */
     border: 1px solid rgba(255, 255, 255, 0.2); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -192,4 +192,72 @@ h1 {
 #loading-message.hidden,
 #error-message.hidden {
     display: none !important;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 25px; /* Reduce padding */
+        margin: 20px; /* Add some margin so it doesn't touch screen edges */
+        max-width: 90%; /* Allow it to be wider relative to small screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust heading size */
+        margin-bottom: 25px;
+    }
+
+    .input-section input[type="text"],
+    #get-weather-btn {
+        font-size: 15px; /* Slightly smaller font for inputs/button */
+        padding: 12px;
+    }
+
+    #get-weather-btn {
+        padding: 12px 20px;
+    }
+
+    #weather-details h2 {
+        font-size: 22px;
+    }
+
+    #temperature {
+        font-size: 26px;
+    }
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 15px; /* Further reduce padding */
+        border-radius: 10px; /* Slightly smaller border radius */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .input-section {
+        flex-direction: column; /* Stack inputs and button vertically */
+        gap: 12px; /* Adjust gap for vertical layout */
+    }
+
+    .input-section input[type="text"],
+    #countrycode-input, /* Ensure country code input also takes full width */
+    #get-weather-btn {
+        width: 100%; /* Make inputs and button take full width */
+        max-width: 100%; /* Override any previous max-width for inputs */
+    }
+
+    #weather-details p,
+    #weather-details p#description {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+
+    #weather-icon {
+        width: 70px;
+        height: 70px;
+    }
 }
