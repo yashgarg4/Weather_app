@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: #f0f8ff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 500px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+
+h1 {
+    color: #2c3e50; 
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-bottom: 25px;
+    align-items: center; 
+}
+
+.input-section input[type="text"] {
+    padding: 14px;
+    border: 1px solid #dfe6e9; 
+    border-radius: 8px;
+    font-size: 16px;
+    flex-grow: 1;
+    min-width: 120px; 
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-section input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+#countrycode-input {
+    flex-grow: 0.5; 
+    max-width: 150px; 
+}
+
+#get-weather-btn {
+    padding: 14px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px; 
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    flex-shrink: 0; 
+}
+
+#get-weather-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+}
+
+#get-weather-btn:active {
+    transform: translateY(1px);
+    background-color: #004a99; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+#get-weather-btn:disabled {
+    background-color: #cccccc;
+    transform: translateY(0); 
+    cursor: not-allowed;
+}
+.weather-info-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px;
+    background-color: #f8f9fa; 
+    min-height: 100px; 
+    text-align: left; 
+    transition: background-color 0.3s ease; 
+    overflow: hidden; 
+}
+
+
+#weather-details.visible {
+    animation: fadeInSlideUp 0.5s ease-out forwards;
+}
+
+#loading-message.visible {
+    animation: pulse 1.5s infinite ease-in-out;
+    color: #555; 
+}
+
+#weather-details h2 {
+    margin-top: 0;
+    color: #3498db; 
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px; 
+}
+
+#weather-details p {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+#weather-details p#description {
+    font-style: italic; 
+    color: #666;
+}
+
+#temperature {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 10px 0;
+}
+
+#weather-icon {
+    margin-top: 10px;
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInSlideUp 0.6s ease-out 0.2s backwards; 
+}
+
+.error-text {
+    color: #e74c3c; 
+    font-weight: bold;
+    background-color: #fddfe2; 
+    padding: 10px; 
+    border-radius: 5px; 
+    animation: fadeInSlideUp 0.5s ease-out; 
+}
+
+#weather-details.visible,
+#loading-message.visible,
+#error-message.visible {
+    display: block !important; 
+}
+
+#weather-details.hidden,
+#loading-message.hidden,
+#error-message.hidden {
+    display: none !important;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather Checker</h1>
+      <div class="input-section">
+        <input
+          type="text"
+          id="zipcode-input"
+          placeholder="Enter Zip/Postcode"
+        />
+        <input
+          type="text"
+          id="countrycode-input"
+          placeholder="Country Code (e.g., US, GB)"
+        />
+        <button id="get-weather-btn">Get Weather</button>
+      </div>
+      <div id="weather-info" class="weather-info-section">
+        <p id="loading-message" style="display: none">Loading...</p>
+        <p id="error-message" class="error-text" style="display: none"></p>
+        <div id="weather-details" style="display: none">
+          <h2 id="city-name"></h2>
+          <p id="temperature"></p>
+          <p id="description"></p>
+          <img id="weather-icon" src="" alt="Weather icon" />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
